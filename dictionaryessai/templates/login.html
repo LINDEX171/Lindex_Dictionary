@@ -1,0 +1,89 @@
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lindex dictionary</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'assets/css/style1.css' %}" />
+  </head>
+  <body>
+   
+<form action="index" method="POST">
+     {% csrf_token %}
+
+     <style>
+        h5{
+            color: red;
+        }
+        </style>
+            
+        {% for message in messages %}
+        <h5>{{message}}</h5>
+        {% endfor %}
+
+    <div class="login_form_container">
+      
+      <div class="login_form">
+        
+        <h2>CONNEXION</h2>
+        <div class="input_group">
+          <i class="fa fa-user">NOM:</i>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input_text"
+            autocomplete="off"
+            name="username"
+
+          />
+        </div>
+        <div class="input_group">
+          <i class="fa fa-unlock-alt">MOT DE PASSE:</i>
+          <input
+            type="password"
+            placeholder="Password"
+            class="input_text"
+            autocomplete="off"
+            name="password"
+          />
+        </div>
+        <div class="button_group" id="login_button">
+            <input type="submit">
+          
+        </div>
+        <div class="fotter">
+          
+          <a href="register">create a new account</a>
+        </div>
+        <div class="fotter">
+          
+            <a></a>
+          </div>
+      </div>
+    </div>
+</form>
+    <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js' %}"></script>
+    <script src="{% static 'login.js' %}"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+    
+       

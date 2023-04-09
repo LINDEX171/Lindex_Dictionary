@@ -1,0 +1,107 @@
+
+
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lindex dictionary</title>
+    <link
+      rel="stylesheet"
+      href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' %}"
+    />
+
+    <link rel="stylesheet" href="{% static 'assets/css/style1.css' %}" />
+  </head>
+  <body>
+<form action="register" method="POST">
+     {% csrf_token %}
+
+     
+
+    
+      
+      <div class="login_form">
+        <style>
+            h5{
+                color: red;
+            }
+            </style>
+                
+            {% for message in messages %}
+            <h5>{{message}}</h5>
+            {% endfor %}
+        
+        <div class="input_group">
+          <i class="fa fa-user">NOM:</i>
+          <input
+            type="text"
+            placeholder="Username"
+            class="input_text"
+            autocomplete="off"
+            name="username"
+
+          />
+        </div>
+        <div class="input_group">
+            <i class="fa fa-user">EMAIL:</i>
+            <input
+              type="text"
+              placeholder="EMAIL"
+              class="input_text"
+              autocomplete="off"
+              name="email"
+  
+            />
+          </div>
+          <div class="input_group">
+            <i class="fa fa-user">PASSWORD1:</i>
+            <input
+              type="password"
+              placeholder="PASSWORD1"
+              class="input_text"
+              autocomplete="off"
+              name="password"
+  
+            />
+          </div>
+          <div class="input_group">
+            <i class="fa fa-user">PASSWORD2:</i>
+            <input
+              type="password"
+              placeholder="PASSWORD2"
+              class="input_text"
+              autocomplete="off"
+              name="password2"
+  
+            />
+          </div>
+  
+        <div class="button_group" id="login_button">
+            <input type="submit">
+          
+        </div>
+       
+      
+      </div>
+    </div>
+</form>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+    
+       
